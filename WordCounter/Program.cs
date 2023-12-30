@@ -14,10 +14,10 @@ class Program
             var words = line.Split(' ');
             foreach (var word in words)
             {
-                var wordNoDots = word.Replace(".", "");
-                if (!occurrencesCount.TryAdd(wordNoDots, 1))
+                var wordNoDotsAndAllSmallLetters = word.Replace(".", "").ToLower();
+                if (!occurrencesCount.TryAdd(wordNoDotsAndAllSmallLetters, 1))
                 {
-                    occurrencesCount[wordNoDots] += 1;
+                    occurrencesCount[wordNoDotsAndAllSmallLetters] += 1;
                 }
             }
         }
